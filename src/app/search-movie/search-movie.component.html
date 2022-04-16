@@ -1,0 +1,16 @@
+<div class = "search-movie">
+    <h1 class="header">Movie Fanatic . 🎬</h1>
+    <div class = "search-bar">
+        <input type="text" name="name" id="name" placeholder="Enter Movie/TV Show" [(ngModel)] = "name">
+        <button (click) = "searchAction()" type="submit">Search</button>
+    </div>
+    <img *ngIf="image_link" src="{{image_link}}" alt="No Image Found" width="300" height="400">
+    <div class = "movie-info">
+        <h2 *ngIf="title" class = "title">{{title}}</h2>
+        <h3 *ngIf="released && runtime">Released Date: <b>{{released}}</b> Duration: <b>{{runtime}}</b></h3>
+        <h3 *ngIf="genre"> Genre: <b>{{genre}}</b></h3>
+        <h3 *ngIf="actors"> Actors: <b>{{actors}}</b></h3>
+        <h3 *ngIf="plot"><b>{{plot}}</b></h3>
+        <h2 *ngIf="imdbRating">⭐{{imdbRating}}/10</h2>
+    </div>
+</div>
